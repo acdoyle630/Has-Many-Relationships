@@ -33,6 +33,13 @@
 --     users.created_at < '2015-01-01';
 
 --7
-SELECT comments.id, comments.body, comments.posts_id, posts.title AS "Post Title"
-  FROM comments, posts
-  WHERE comments.posts_id = posts.id;
+-- SELECT comments.id, comments.body, comments.posts_id, posts.title AS "Post Title"
+--   FROM comments, posts
+--   WHERE comments.posts_id = posts.id;
+
+--8
+-- select *, posts.title AS "post_title", posts.url AS "post_url", body AS "comment_body"
+--   From comments
+--   JOIN posts
+--   ON posts.id = comments.posts_id
+--   WHERE posts.created_at < '2015-01-01';
