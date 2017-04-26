@@ -18,14 +18,17 @@ CREATE TABLE IF NOT EXISTS posts(
   url VARCHAR(510) DEFAULT NULL,
   content TEXT DEFAULT NULL,
   created_at TIMESTAMP NOT NULL DEFAULT now(),
-  updated_at TIMESTAMP NOT NULL DEFAULT now()
+  updated_at TIMESTAMP NOT NULL DEFAULT now(),
+  users_id INT REFERENCES users(id)
 );
 
 CREATE TABLE IF NOT EXISTS comments(
   id SERIAL PRIMARY KEY,
   body VARCHAR(510) DEFAULT NULL,
   created_at TIMESTAMP NOT NULL DEFAULT now(),
-  updated_at TIMESTAMP NOT NULL DEFAULT now()
+  updated_at TIMESTAMP NOT NULL DEFAULT now(),
+  users_id INT REFERENCES users(id),
+  posts_id INT REFERENCES posts(id)
 );
 
 
