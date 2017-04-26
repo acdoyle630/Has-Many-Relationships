@@ -50,3 +50,15 @@
 --   JOIN posts
 --   ON comments.posts_id = posts.id
 --   WHERE posts.created_at > '2015-01-01';
+
+--10
+SELECT *, posts.title AS "post_title", posts.url AS "post_url", body AS "comment_body"
+  FROM comments
+  JOIN posts
+  ON comments.posts_id = posts.id
+  WHERE comments.body LIKE '%USB%';
+
+
+
+
+
