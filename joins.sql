@@ -21,7 +21,13 @@
 --   users.id = posts.users_id;
 
 --5
-SELECT username, posts.created_at
-  FROM users, posts
-  WHERE users.id = posts.users_id AND
-  posts.created_at > '2015-01-01';
+-- SELECT username, posts.created_at
+--   FROM users, posts
+--   WHERE users.id = posts.users_id AND
+--   posts.created_at > '2015-01-01';
+
+--6
+-- SELECT posts.title, posts.content, users.username
+--   FROM posts, users
+--   WHERE posts.users_id = users.id AND
+--     users.created_at < '2015-01-01';
