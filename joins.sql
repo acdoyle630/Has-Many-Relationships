@@ -31,3 +31,8 @@
 --   FROM posts, users
 --   WHERE posts.users_id = users.id AND
 --     users.created_at < '2015-01-01';
+
+--7
+SELECT comments.id, comments.body, comments.posts_id, posts.title AS "Post Title"
+  FROM comments, posts
+  WHERE comments.posts_id = posts.id;
