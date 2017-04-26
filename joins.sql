@@ -38,8 +38,15 @@
 --   WHERE comments.posts_id = posts.id;
 
 --8
--- select *, posts.title AS "post_title", posts.url AS "post_url", body AS "comment_body"
---   From comments
+-- SELECT *, posts.title AS "post_title", posts.url AS "post_url", body AS "comment_body"
+--   FROM comments
 --   JOIN posts
 --   ON posts.id = comments.posts_id
 --   WHERE posts.created_at < '2015-01-01';
+
+--9
+-- SELECT *, posts.title AS "post_title", posts.url AS "post_url", body AS "comment_body"
+--   FROM comments
+--   JOIN posts
+--   ON comments.posts_id = posts.id
+--   WHERE posts.created_at > '2015-01-01';
