@@ -52,13 +52,20 @@
 --   WHERE posts.created_at > '2015-01-01';
 
 --10
-SELECT *, posts.title AS "post_title", posts.url AS "post_url", body AS "comment_body"
-  FROM comments
-  JOIN posts
-  ON comments.posts_id = posts.id
-  WHERE comments.body LIKE '%USB%';
+-- SELECT *, posts.title AS "post_title", posts.url AS "post_url", body AS "comment_body"
+--   FROM comments
+--   JOIN posts
+--   ON comments.posts_id = posts.id
+--   WHERE comments.body LIKE '%USB%';
 
-
+--11
+SELECT title AS "post_title", users.first_name, users.last_name, comments.body AS "comment_body"
+  FROM posts
+  JOIN users
+  ON posts.users_id = users.id
+  JOIN comments
+  ON comments.users_id = users.id
+  WHERE comments.body LIKE '%matrix%';
 
 
 
