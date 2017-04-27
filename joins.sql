@@ -78,18 +78,39 @@
 --   posts.content LIKE '%dolorum%';
 
 --13
-SELECT users.first_name AS "post_author_first_name", users.last_name AS "post_author_last_name", posts.title AS "Post_title", (
-  SELECT users.username
-    FROM users
-    WHERE comments.users_id = users.id)
-  AS "comment_author_username",
-  comments.body AS "comment_body"
+-- SELECT users.first_name AS "post_author_first_name", users.last_name AS "post_author_last_name", posts.title AS "Post_title", (
+--   SELECT users.username
+--     FROM users
+--     WHERE comments.users_id = users.id)
+--   AS "comment_author_username",
+--   comments.body AS "comment_body"
 
+--   FROM users
+--   INNER JOIN posts
+--   ON posts.users_id = users.id
+--   INNER JOIN comments
+--   ON posts.id = comments.posts_id
+--   WHERE (comments.body LIKE '%SSL%' OR
+--     comments.body LIKE '%firewall%') AND
+--     posts.content LIKE '%nemo%';
+
+-- SELECT posts.id AS "post_id", posts.title AS "post_title", users.id AS "user_id", comments.users_id AS "commenter_id", comments.body AS "comment_body"
+--   FROM posts
+--   JOIN comments
+--   ON comments.posts_id = posts.id
+--   JOIN users
+--   ON users.id = posts.users_id
+  --WHERE comments.users_id = users.id;
+
+
+-- SELECT COUNT (comments.id)
+--   FROM comments
+--   JOIN posts
+--   ON comments.posts_id = posts.id
+--   where posts.created_at > '2015-07-14';
+
+SELECT users.username
   FROM users
-  INNER JOIN posts
-  ON posts.users_id = users.id
-  INNER JOIN comments
-  ON posts.id = comments.posts_id
-  WHERE (comments.body LIKE '%SSL%' OR
-    comments.body LIKE '%firewall%') AND
-    posts.content LIKE '%nemo%';
+  JOIN comments
+  ON comments.users_id = users.id
+  WHERE comments.body LIKE '%programming%';
